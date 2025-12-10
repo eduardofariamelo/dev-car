@@ -20,12 +20,24 @@ header nav ul {
 }
 
 header nav ul li {
+    position: relative;
     cursor: pointer;
+    padding-bottom: 5px;
 }
 
-header nav ul li:hover {
-    color: #beff1b;
-    border-bottom: solid 2px #beff1b;
+header nav ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #beff1b;
+    transition: width 0.3s ease;
+}
+
+header nav ul li:hover::after {
+    width: 100%;
 }
 
 section {
